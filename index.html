@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Spy Number Checker</title> 
+    <style>
+        body{
+            background-color: rgb(233, 238, 243);
+            font-family: cursive;
+        }
+        .container{
+            background-color: rgb(185, 179, 196);
+            margin: 100px 0 0 450px;
+            border-radius: 10px;
+            display: block;
+            width: 450px;
+            height: 450px;
+        }
+        .container1{
+            font-size: 22px;
+            margin: 0 0 0 54px;
+            padding-top: 1px;
+            line-height: 1.5;
+        }
+        .inputbox{
+            font-family: cursive;
+            width:80%;
+            border: 2px solid black;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 7px;
+            margin: 0 0 0 30px;
+            padding-left: 20px;
+            text-align: center;
+        }
+        .container2{
+            display: flex;
+            margin-top: 20px;
+        }
+        .btn1{
+            margin: 10px 0 0 90px;
+            width: 100px; 
+            height: 36px; 
+            background: green; 
+            border-radius: 13px; 
+            color: whitesmoke; 
+            text-align: center; 
+            padding: 3px; 
+            border: none; 
+            font-size: 16px;
+        }
+        .btn1:hover,.btn2:hover{
+            border: 2px solid black;
+            font-size: 18px;
+        }
+        .btn2{
+            margin: 10px 0 0 50px;
+            width: 100px; 
+            height: 36px; 
+            background: #ce1212;; 
+            border-radius: 13px; 
+            color: whitesmoke; 
+            text-align: center; 
+            padding: 3px; 
+            border: none; 
+            font-size: 16px;
+        }
+        .container3{
+            background-color: rgb(57, 128, 57);
+            width: 380px;
+            height: 100px;
+            margin-left: 35px;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head> 
+<body>  
+	</div> 
+    <div class="container">
+        <div class="container1">
+            <h2 style="color: green;">Hiii&#128521;<span style="color: #ce1212;">Welcome To&#129488;</span><br>
+            <span style="color: black;">Spy Number Checker</span></h2>
+        </div>
+        
+            <input type="number" class="inputbox" id="numberInput" placeholder="Enter the number you want to check">
+            <div class="container2">
+                <button onclick="checkSpyNumber()" type="submit" class="btn1" id="sub-id">Check</button>
+                <button type="submit" class="btn2" id="id-clear">Clear</button>
+            </div> 
+            <div class="container3">
+                <p style="padding-top: 26px;" id="result">Result</p>
+            </div>
+    </div>
+    <script> 
+        function checkSpyNumber() { 
+            const numberInput = document.getElementById("numberInput").value; 
+            const digits = numberInput.toString().split("").map(Number); 
+            const sum = digits.reduce((a, b) => a + b, 0); 
+            const product = digits.reduce((a, b) => a * b, 1); 
+            if (sum === product) { 
+                document.getElementById("result").textContent = `${numberInput} is a Spy Number!`; 
+            } else { 
+                document.getElementById("result").textContent = `${numberInput} is not a Spy Number.`; 
+            } 
+        }
+        document.getElementById("id-clear") .addEventListener("click", () => { 
+		document.getElementById("numberInput").value = ""; 
+		document.getElementById("result").innerHTML = "Result"; 
+	})
+    </script>
+</body> 
+</html>
